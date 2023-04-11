@@ -1,0 +1,16 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "esbuild ./js/main.js --bundle --sourcemap --outfile=bundle.js --serve",
+    "build": "esbuild ./js/main.js --bundle --minify --outfile=bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "0.17.15"
+  }
+}

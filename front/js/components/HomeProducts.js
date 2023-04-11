@@ -31,18 +31,23 @@ export class HomeProducts {
      * @returns {Promise<Object>}
      */
     static initialize = async (element) => {
-        try {
-            /**
+        /**
              * @type {HTMLElement}
              */
-            const loading = new Loading().element
-            element.append(loading)
+        const loading = new Loading().element
+        element.append(loading)
+        try {
             const products = await fetchAllProduct();
             loading.remove()
             return new HomeProducts(element, products);
 
         } catch (error) {
+            loading.remove()
             console.error(error);
+            const p = createElement('p')
+            p.style.fontSize = '20px'
+            p.innerText = 'Nous sommes désolé nous rencontrons des problèmes avec le serveur'
+            element.append(p)
         }
     };
 }

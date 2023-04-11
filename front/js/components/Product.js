@@ -80,18 +80,22 @@ export class Product {
      * @returns {Promise<Object>}
      */
     static initialize = async (element, idProduct, cart) => {
-        try {
-            /**
+         /**
              * @type {HTMLElement}
              */
-            const loading = new Loading().element;
-            element.append(loading);
-
+         const loading = new Loading().element;
+         element.append(loading);
+        try {
             const product = await fetchProduct(idProduct);
             loading.remove();
             return new Product(element, product, cart);
         } catch (error) {
+            loading.remove()
             console.error(error);
+            const p = createElement('p')
+            p.style.fontSize = '20px'
+            p.innerText = 'Nous sommes désolé nous rencontrons des problèmes avec le serveur'
+            element.append(p)
         }
     };
 }
@@ -293,6 +297,8 @@ class AddCartButton {
                         throw new CustomError("Veuillez choisir une quantité");
                     else if (Number(value) < 0)
                         throw new CustomError("Quantité négative non autorisé");
+                    else if (Number(value) > 100)
+                    throw new CustomError('Vous ne pouvez pas ajouter plus de 100 article')
             }
             input.style.border = "none";
             return [(isValid = true), undefined];

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../js/confirmation.js"],
+  "sourcesContent": ["const orderId = document.querySelector('#orderId')\nconst urlParam = new URLSearchParams(window.location.search)\nconst id = urlParam.get('id')\n\norderId.textContent = id"],
+  "mappings": "MAAA,IAAMA,EAAU,SAAS,cAAc,UAAU,EAC3CC,EAAW,IAAI,gBAAgB,OAAO,SAAS,MAAM,EACrDC,EAAKD,EAAS,IAAI,IAAI,EAE5BD,EAAQ,YAAcE",
+  "names": ["orderId", "urlParam", "id"]
+}

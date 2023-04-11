@@ -43,10 +43,6 @@ export class HomeProducts {
 
         } catch (error) {
             console.error(error);
-            const message = createElement("p");
-            message.style.fontSize = '1.5rem'
-            message.innerText = "Aucun produit trouvé";
-            element.append(message);
         }
     };
 }

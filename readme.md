@@ -6,7 +6,7 @@
 	Cinquième projet du parcours "Développeur web" chez OpenClassroom.
 </h3>
 
-[![mockup](./images/mockup.png)](https://jzmirou.github.io/La-Panthere/)
+[![mockup](./images/mockup.jpg)](https://jzmirou.github.io/La-Panthere/)
 
 
 
